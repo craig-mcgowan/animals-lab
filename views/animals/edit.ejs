@@ -1,0 +1,30 @@
+<%- include("../partials/head.ejs")  %>
+
+<body>
+  <form action="/animals/<%= animal._id %>?_method=PUT" method="post">
+    <fieldset>
+      <legend>Edit <%= animal.species %></legend>
+      <label
+        >Species:
+        <input type="text" name="species" placeholder="enter animal species" 
+        value="<%= animal.species %>"/>
+      </label>
+      <label>
+        Location:
+        <input type="text" name="location" placeholder="enter animal location" value="<%= animal.location %>"/>
+      </label>
+        Life Expectancy:
+        <input type="text" name="lifeExpectancy" placeholder="enter animal life expentancy" value="<%= animal.lifeExpectancy %>"/>
+      </label>
+      <label>
+        Is it extinct?
+        <input type="checkbox" 
+        name="extinct" 
+        <%= animal.extinct ? "checked" : "" %>
+        />
+      </label>
+      <input type="submit" value="Update animal" />
+    </fieldset>
+
+  
+</body>

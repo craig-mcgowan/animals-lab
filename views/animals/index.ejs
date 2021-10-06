@@ -1,0 +1,14 @@
+<%- include("../partials/head.ejs")  %>
+
+<body>
+  <%- include("../partials/header.ejs") %>
+  <main>
+    <% for (animal of animals) { %>
+      <a href="/animals/<%= animal._id %>"><h2><%= animal.species %></h2></a>
+    <% } %>
+
+    <a href="/animals/new"><button>Create a New Animal</button></a>
+  </main>
+
+
+</body>
